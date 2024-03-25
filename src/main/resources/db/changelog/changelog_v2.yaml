@@ -3,7 +3,7 @@ databaseChangeLog:
       id: '001-changelog_v1-questions-table'
       author: 'bansikah'
       changes:
-        - createTable:
+        - update:
             tableName: questions
             columns:
               - column:
@@ -53,7 +53,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: false
-
+              - column:
+                  name: "category"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
 
 
 

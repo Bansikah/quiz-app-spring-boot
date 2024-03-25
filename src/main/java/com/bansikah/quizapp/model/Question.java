@@ -18,5 +18,12 @@ public class Question {
     private String option4;
     private String rightAnswer;
     private String difficultyLevel;
+    private String category;
 
+    public void setCorrect(boolean b) {
+        this.rightAnswer = b ? "true" : "false";
+    }
+    public boolean isCorrect() {
+        return rightAnswer.equals("true");
+    }
 }
