@@ -2,7 +2,6 @@ package com.bansikah.quizapp.service;
 
 import com.bansikah.quizapp.dao.QuestionDAO;
 import com.bansikah.quizapp.model.Question;
-import org.aspectj.weaver.patterns.TypePatternQuestions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.springframework.http.HttpStatus.OK;
 
 @Service
 public class QuestionService {
@@ -32,7 +29,7 @@ public class QuestionService {
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return new ResponseEntity<>(new Question(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
     }
 
     public ResponseEntity<List<Question>> getQuestionByCategory(String category) {
