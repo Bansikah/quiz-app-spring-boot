@@ -36,19 +36,6 @@ class QuestionDAOTest {
         question.setCategory("history");
         Question savedQuestion = questionDAO.save(question);
 
-        Question question1 = new Question();
-        question.setQuestionTitle("What is the most populated country in the world?");
-        question.setId(2);
-        question.setOption1("China");
-        question.setOption2("Japan");
-        question.setOption3("London");
-        question.setOption4("Berlin");
-        question.setRightAnswer("China");
-        question.setDifficultyLevel("Easy");
-        question.setCategory("history");
-        Question savedQuestion1 = questionDAO.save(question1);
-
-
         assertNotNull(savedQuestion.getId());
         assertEquals(question.getQuestionTitle(), savedQuestion.getQuestionTitle());
         assertEquals(question.getOption1(), savedQuestion.getOption1());
