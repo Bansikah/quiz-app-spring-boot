@@ -14,7 +14,6 @@ FROM eclipse-temurin:21-jre-alpine
 #COPY target/springsecurity-0.0.1-SNAPSHOT.jar app.jar
 #ENTRYPOINT ["java", "-jar", "app.jar"]
 
-
 COPY target/quizapp-0.0.1-SNAPSHOT.jar .
 COPY ./run.sh  .
 RUN chmod +u run.sh
