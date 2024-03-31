@@ -561,7 +561,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    authorization information.  Unlike access tokens, refresh tokens are
    intended for use only with authorization servers and are never sent
    to resource servers.
-
+   ```
   +--------+                                           +---------------+
   |        |--(A)------- Authorization Grant --------->|               |
   |        |                                           |               |
@@ -582,7 +582,7 @@ RFC 6749                        OAuth 2.0                   October 2012
   |        |                                           |               |
   |        |<-(H)----------- Access Token -------------|               |
   +--------+           & Optional Refresh Token        +---------------+
-
+```
                Figure 2: Refreshing an Expired Access Token
 
    The flow illustrated in Figure 2 includes the following steps:
@@ -1294,7 +1294,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    interacting with the resource owner's user-agent (typically a web
    browser) and capable of receiving incoming requests (via redirection)
    from the authorization server.
-
+```
      +----------+
      | Resource |
      |   Owner  |
@@ -1320,7 +1320,7 @@ RFC 6749                        OAuth 2.0                   October 2012
      |         |                                             |
      |         |<---(E)----- Access Token -------------------'
      +---------+       (w/ Optional Refresh Token)
-
+```
    Note: The lines illustrating steps (A), (B), and (C) are broken into
    two parts as they pass through the user-agent.
 
@@ -1624,7 +1624,7 @@ RFC 6749                        OAuth 2.0                   October 2012
 
    For example, the client makes the following HTTP request using TLS
    (with extra line breaks for display purposes only):
-
+```
      POST /token HTTP/1.1
      Host: server.example.com
      Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
@@ -1632,7 +1632,7 @@ RFC 6749                        OAuth 2.0                   October 2012
 
      grant_type=authorization_code&code=SplxlOBeZQQYbYS6WxSbIA
      &redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb
-
+```
    The authorization server MUST:
 
    o  require client authentication for confidential clients or for any
@@ -1679,7 +1679,7 @@ RFC 6749                        OAuth 2.0                   October 2012
 
 
    An example successful response:
-
+```
      HTTP/1.1 200 OK
      Content-Type: application/json;charset=UTF-8
      Cache-Control: no-store
@@ -1692,7 +1692,7 @@ RFC 6749                        OAuth 2.0                   October 2012
        "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
        "example_parameter":"example_value"
      }
-
+```
 4.2.  Implicit Grant
 
    The implicit grant type is used to obtain access tokens (it does not
@@ -1733,7 +1733,7 @@ Hardt                        Standards Track                   [Page 31]
 
 RFC 6749                        OAuth 2.0                   October 2012
 
-
+```
      +----------+
      | Resource |
      |  Owner   |
@@ -1766,7 +1766,7 @@ RFC 6749                        OAuth 2.0                   October 2012
      |  Client |
      |         |
      +---------+
-
+```
    Note: The lines illustrating steps (A) and (B) are broken into two
    parts as they pass through the user-agent.
 
@@ -2080,7 +2080,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    using direct authentication schemes such as HTTP Basic or Digest
    authentication to OAuth by converting the stored credentials to an
    access token.
-
+```
      +----------+
      | Resource |
      |  Owner   |
@@ -2098,7 +2098,7 @@ RFC 6749                        OAuth 2.0                   October 2012
      |         |<--(C)---- Access Token ---------<|               |
      |         |    (w/ Optional Refresh Token)   |               |
      +---------+                                  +---------------+
-
+```
             Figure 5: Resource Owner Password Credentials Flow
 
    The flow illustrated in Figure 5 includes the following steps:
@@ -2160,7 +2160,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    For example, the client makes the following HTTP request using
    transport-layer security (with extra line breaks for display purposes
    only):
-
+```
      POST /token HTTP/1.1
      Host: server.example.com
      Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
@@ -2168,12 +2168,7 @@ RFC 6749                        OAuth 2.0                   October 2012
 
      grant_type=password&username=johndoe&password=A3ddj3w
 
-
-
-
-
-
-
+```
 
 
 
@@ -2208,6 +2203,7 @@ RFC 6749                        OAuth 2.0                   October 2012
 
    An example successful response:
 
+   ```
      HTTP/1.1 200 OK
      Content-Type: application/json;charset=UTF-8
      Cache-Control: no-store
@@ -2220,6 +2216,7 @@ RFC 6749                        OAuth 2.0                   October 2012
        "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
        "example_parameter":"example_value"
      }
+```
 
 4.4.  Client Credentials Grant
 
@@ -2240,7 +2237,7 @@ RFC 6749                        OAuth 2.0                   October 2012
 
    The client credentials grant type MUST only be used by confidential
    clients.
-
+```
      +---------+                                  +---------------+
      |         |                                  |               |
      |         |>--(A)- Client Authentication --->| Authorization |
@@ -2248,8 +2245,8 @@ RFC 6749                        OAuth 2.0                   October 2012
      |         |<--(B)---- Access Token ---------<|               |
      |         |                                  |               |
      +---------+                                  +---------------+
-
-                     Figure 6: Client Credentials Flow
+```
+                    Figure 6: Client Credentials Flow
 
    The flow illustrated in Figure 6 includes the following steps:
 
@@ -2297,7 +2294,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    For example, the client makes the following HTTP request using
    transport-layer security (with extra line breaks for display purposes
    only):
-
+```
      POST /token HTTP/1.1
      Host: server.example.com
      Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
@@ -2306,7 +2303,7 @@ RFC 6749                        OAuth 2.0                   October 2012
      grant_type=client_credentials
 
    The authorization server MUST authenticate the client.
-
+```
 4.4.3.  Access Token Response
 
    If the access token request is valid and authorized, the
@@ -2316,7 +2313,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    returns an error response as described in Section 5.2.
 
    An example successful response:
-
+```
      HTTP/1.1 200 OK
      Content-Type: application/json;charset=UTF-8
      Cache-Control: no-store
@@ -2328,7 +2325,7 @@ RFC 6749                        OAuth 2.0                   October 2012
        "expires_in":3600,
        "example_parameter":"example_value"
      }
-
+```
 4.5.  Extension Grants
 
    The client uses an extension grant type by specifying the grant type
@@ -2354,7 +2351,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    Markup Language (SAML) 2.0 assertion grant type as defined by
    [OAuth-SAML2], the client could make the following HTTP request using
    TLS (with extra line breaks for display purposes only):
-
+```
      POST /token HTTP/1.1
      Host: server.example.com
      Content-Type: application/x-www-form-urlencoded
@@ -2362,7 +2359,7 @@ RFC 6749                        OAuth 2.0                   October 2012
      grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Asaml2-
      bearer&assertion=PEFzc2VydGlvbiBJc3N1ZUluc3RhbnQ9IjIwMTEtMDU
      [...omitted for brevity...]aG5TdGF0ZW1lbnQ-PC9Bc3NlcnRpb24-
-
+```
    If the access token request is valid and authorized, the
    authorization server issues an access token and optional refresh
    token as described in Section 5.1.  If the request failed client
@@ -2431,7 +2428,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    with a value of "no-cache".
 
    For example:
-
+```
      HTTP/1.1 200 OK
      Content-Type: application/json;charset=UTF-8
      Cache-Control: no-store
@@ -2444,7 +2441,7 @@ RFC 6749                        OAuth 2.0                   October 2012
        "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
        "example_parameter":"example_value"
      }
-
+```
    The client MUST ignore unrecognized value names in the response.  The
    sizes of tokens and other values received from the authorization
    server are left undefined.  The client should avoid making
@@ -2549,7 +2546,7 @@ RFC 6749                        OAuth 2.0                   October 2012
    vary.
 
    For example:
-
+```
      HTTP/1.1 400 Bad Request
      Content-Type: application/json;charset=UTF-8
      Cache-Control: no-store
@@ -2558,8 +2555,7 @@ RFC 6749                        OAuth 2.0                   October 2012
      {
        "error":"invalid_request"
      }
-
-
+```
 
 
 
