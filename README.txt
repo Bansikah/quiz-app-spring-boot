@@ -57,7 +57,7 @@ Accessing the Application:
 
 Once the application starts successfully, you can access the quiz application in your web browser by visiting:
 ```
-http://localhost:8081
+http://localhost:8080
 ```
 ## Additional Notes:
 
