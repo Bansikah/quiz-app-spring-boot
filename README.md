@@ -3,7 +3,7 @@
 This document provides instructions on how to clone, build, and run a Spring Boot quiz application.
 
 ## Action Status
-![Build-status](https://github.com/Bansikah/quiz-app-spring-boot/actions/workflows/maven.yml/badge.svg?event=push)
+![Build-status](https://github.com/Bansikah/quiz-app-spring-boot/actions/workflows/maven.yaml/badge.svg?event=push)
 
 ## Prerequisites:
 
