@@ -9,4 +9,4 @@ spec:
     - protocol: "TCP"
       port: 8081 # The port that the service is running on in the cluster
       targetPort: 8081 # The port exposed by the service
-  type: NodePort # type of the service.
+  type: ClusterIP # type of the service.

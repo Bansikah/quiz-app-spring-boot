@@ -79,4 +79,6 @@ kubeclt apply -f k8s-service.yaml
 docker push bansikah/quiz-app-spring-boot:v1.0
 docker build -t bansikah/quiz-app-spring-boot:v1.0 .
 
+ \kubectl port-forward service/springboot-k8s-service 9000:8081
+
 ```
