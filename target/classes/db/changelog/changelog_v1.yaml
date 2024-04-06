@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: '001-changelog_v1-questions-table'
+      author: 'bansikah'
+      changes:
+        - createTable:
+            tableName: questions
+            columns:
+              - column:
+                  name: "id"
+                  constraints:
+                    primaryKey: true
+                  type: "varchar(64)"
+              - column:
+                  name: "questionTitle"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "option1"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "option2"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "option3"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "option4"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "rightAnswer"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "difficultyLevel"
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: false
+
+
+
+
+
