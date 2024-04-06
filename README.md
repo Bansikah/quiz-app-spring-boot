@@ -4,6 +4,7 @@ This document provides instructions on how to clone, build, and run a Spring Boo
 
 ## Action Status
 ![Build-status](https://github.com/Bansikah/quiz-app-spring-boot/actions/workflows/maven.yaml/badge.svg?event=push)
+![Release-status](https://github.com/Bansikah/quiz-app-spring-boot/actions/workflows/release.yaml/badge.svg?event=push)
 
 ## Prerequisites:
 
