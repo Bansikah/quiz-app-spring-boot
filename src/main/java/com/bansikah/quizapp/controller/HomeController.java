@@ -9,6 +9,6 @@ public class HomeController {
 
     @RequestMapping
     public String home() {
-        return "This is the home page for my quiz application";
+        return "This is the home page for my quiz application!";
     }
 }
