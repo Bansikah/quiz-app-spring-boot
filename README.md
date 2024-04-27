@@ -28,7 +28,7 @@ Replace your-username with your actual GitHub username.
 Navigate to the project directory:
 
 Bash
-cd quiz-app-spring-boot
+``cd quiz-app-spring-boot``
 Use code with caution.
 Run the following command to build the application using Maven:
 
@@ -53,7 +53,7 @@ Run the application using the following command:
 java -jar spring-boot-quiz-app.jar
 ```
 Use code with caution.
-Replace quizapp-0.0.1-SNAPSHOT.jar with the actual filename of your JAR file if it differs.
+Replace ``quizapp-0.0.1-SNAPSHOT.jar`` with the actual filename of your JAR file if it differs.
 
 This command will launch the application using the Java runtime environment. You should see logs indicating the application's status, and it will typically start on the default port (usually 8080) but we have 8081.
 
