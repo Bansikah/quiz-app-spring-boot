@@ -1,31 +1,42 @@
+image: maven:latest
+
 stages:
+  - build
   - test
+  - package
   - deploy
 
-test-all:
-  stage: test
-  except:
-    - master
+build-job:
+  stage: build
   script:
-    - mvn clean install
+    - echo "Compiling the code"
+    - "mvn compile"
+    - echo "compile complete"
 
-test-unit:
+
+test-job:
   stage: test
-  only:
-    - master
   script:
-    - mvn clean package
-    - cp target/quizapp-0.0.1-SNAPSHOT.jar quizapp-${CI_COMMIT_SHA}.jar
+    - echo "Running unit test"
+    - "mvn test"
+
+package-job:
+  stage: test
+  script:
+    - echo "Package the code"
+    - "mvn package -B"
   artifacts:
-    name: quizapp
-    expire_in: 1 week
     paths:
-      - quizapp-${CI_COMMIT_SHA}.jar
+      - target/*.jar
 
-deploy:
+deploy-job:
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
   stage: deploy
-  needs: [test-unit]
   only:
-    - master
+    refs:
+      - master
   script:
-    - ls quizapp-*.jar
+    - sshpass -V
+    - echo "Deploying application...."
+    - echo "Application successfully deployed!"
