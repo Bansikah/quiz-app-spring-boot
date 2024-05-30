@@ -4,6 +4,7 @@ stages:
   - build
   - test
   - package
+  - security
   - deploy
 
 build-job:
@@ -11,8 +12,15 @@ build-job:
   script:
     - echo "Compiling the code"
     - "mvn compile"
+    - curl -sL https://raw.githubusercontent.com/snyk/snyk/master/install.sh | bash  # Install Snyk CLI
     - echo "compile complete"
 
+security-job:
+  stage: security
+  script:
+    - snyk container test bansikah/quiz-app-spring-boot:v1.0
+  dependencies:
+    - build  # Wait for build stage to finish before Snyk scan
 
 test-job:
   stage: test
