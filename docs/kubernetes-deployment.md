@@ -82,3 +82,23 @@ docker build -t bansikah/quiz-app-spring-boot:v1.0 .
  \kubectl port-forward service/springboot-k8s-service 9000:8081
 
 ```
+
+# Kube aliases
+```bash
+alias k=kubectl
+alias kd='kubectl describe'
+alias kc='kubectl create'
+alias kd='kubectl delete'
+alias kgp='kubectl get pods'
+alias kgd='kubectl get deployments'
+alias kgs='kubectl get services'
+alias kgn='kubectl get nodes'
+alias kgi='kubectl get ingresses'
+alias krun='kubectl run'
+alias kctx='kubectl config use-context'
+alias kap='kubectl apply -f'
+alias kpf='kubectl port-forward'
+alias klogs='kubectl logs'
+alias kdp='kubectl describe pod'
+
+```
